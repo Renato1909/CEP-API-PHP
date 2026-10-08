@@ -1,0 +1,244 @@
+/* =========================================================
+   Sistema de Consulta de CEP — ViaCEP
+   Folha de estilo (CSS)
+   ========================================================= */
+
+:root {
+    --cor-fundo: #eef2f7;
+    --cor-primaria: #2563eb;
+    --cor-primaria-escura: #1d4ed8;
+    --cor-sucesso: #16a34a;
+    --cor-erro: #dc2626;
+    --cor-texto: #1f2937;
+    --cor-texto-suave: #6b7280;
+    --cor-borda: #d1d5db;
+    --branco: #ffffff;
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --raio: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eef2f7 0%, #dbeafe 100%);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 640px;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.cabecalho h1 {
+    font-size: 1.9rem;
+    color: var(--cor-primaria-escura);
+    margin-bottom: 6px;
+}
+
+.cabecalho p {
+    color: var(--cor-texto-suave);
+    font-size: 1rem;
+}
+
+/* ---------- Formulário ---------- */
+.formulario {
+    background: var(--branco);
+    padding: 26px;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    margin-bottom: 24px;
+}
+
+.formulario label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--cor-texto);
+}
+
+.grupo-campo {
+    display: flex;
+    gap: 10px;
+}
+
+.grupo-campo input {
+    flex: 1;
+    padding: 13px 16px;
+    font-size: 1.05rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: var(--raio);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    letter-spacing: 1px;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.grupo-campo button {
+    padding: 13px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--branco);
+    background: var(--cor-primaria);
+    border: none;
+    border-radius: var(--raio);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+.grupo-campo button:hover {
+    background: var(--cor-primaria-escura);
+}
+
+.grupo-campo button:active {
+    transform: scale(0.97);
+}
+
+.formulario small {
+    display: block;
+    margin-top: 10px;
+    color: var(--cor-texto-suave);
+    font-size: 0.85rem;
+}
+
+/* ---------- Área de resultados ---------- */
+.area-resultado {
+    min-height: 120px;
+}
+
+.alerta {
+    padding: 14px 18px;
+    border-radius: var(--raio);
+    margin-bottom: 16px;
+    font-size: 0.98rem;
+}
+
+.alerta-sucesso {
+    background: #dcfce7;
+    color: #14532d;
+    border-left: 5px solid var(--cor-sucesso);
+}
+
+.alerta-erro {
+    background: #fee2e2;
+    color: #7f1d1d;
+    border-left: 5px solid var(--cor-erro);
+}
+
+/* ---------- Cartão de dados ---------- */
+.cartao {
+    background: var(--branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 15px 22px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.linha:last-child {
+    border-bottom: none;
+}
+
+.linha:nth-child(odd) {
+    background: #f8fafc;
+}
+
+.rotulo {
+    font-weight: 700;
+    color: var(--cor-primaria-escura);
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.valor {
+    text-align: right;
+    color: var(--cor-texto);
+    font-size: 1.02rem;
+    word-break: break-word;
+}
+
+/* ---------- Estado inicial ---------- */
+.estado-inicial {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    color: var(--cor-texto-suave);
+}
+
+.estado-inicial .icone {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+    text-align: center;
+    margin-top: 28px;
+    color: var(--cor-texto-suave);
+    font-size: 0.88rem;
+}
+
+.rodape a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 480px) {
+    .cabecalho h1 {
+        font-size: 1.5rem;
+    }
+
+    .grupo-campo {
+        flex-direction: column;
+    }
+
+    .grupo-campo button {
+        width: 100%;
+    }
+
+    .linha {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .valor {
+        text-align: left;
+    }
+}
