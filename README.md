@@ -115,6 +115,11 @@ O projeto utiliza a **API ViaCEP**:
 
 ---
 
+Abaixo, vídeo do site funcionando:
+
+[Vídeo API Pública PHP.webm](https://github.com/user-attachments/assets/3d345da3-5c54-427e-a0f1-fa20db80f576)
+
+
 ## 👨‍🎓 Autor - Renato Aparecido da Silva - 2° MTec DS/AMS
 
 Desenvolvido como atividade acadêmica de **Desenvolvimento Web**.
